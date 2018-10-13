@@ -28,9 +28,9 @@ User.sync({force: false}).then(() => {
         })
         .then((u) => {
           console.log(u.toJSON());
-          u.lastName = 'yyyyy';
+          // u.lastName = 'yyyyy';
           console.log('u.save');
-          return u.save();
+          return u.update({'lastName': 'yyxxx'}, {hooks: false});
         })
         .then( u => {
           console.log(u.toJSON());
