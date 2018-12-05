@@ -9,9 +9,9 @@ let bytes = 0;
 console.log('file size:', size);
 
 const stream = fs.createReadStream(file);
-stream.on('data', (chunk) => {
-  console.log('file: data: ', bytes += chunk.length, size);
-});
+// stream.on('data', (chunk) => {
+//   console.log('file: data: ', bytes += chunk.length, size);
+// });
 
 // const URL = 'https://update.joytest.org/updates/1.0.0/file?name=scan.js';
 const URL = 'http://127.0.0.1:8101/updates/1.0.0/file?name=scan.js';
