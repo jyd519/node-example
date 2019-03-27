@@ -20,9 +20,9 @@ function getAntiVirusProducts() {
       reject(err); 
     });
 
-    p.on('close', (code) => {
-      if (code !== 0) {
-        const err = new Error('failed to run wmic');
+    p.on('exit', (code) => {
+      if (code) {
+        const err = new Error('run wmic failed');
         err.code = code;
         fs.closeSync(fd);
         fs.unlinkSync(filename);
